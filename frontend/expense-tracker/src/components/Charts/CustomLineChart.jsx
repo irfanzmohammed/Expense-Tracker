@@ -6,7 +6,7 @@ CartesianGrid,
 Area,AreaChart  
 } from "recharts"
 const CustomLineChart = ({data}) => {
-   console.log("Line Chart Data →", data); 
+   
   const CustomToolTip=({active,payload})=>{
   if(active&&payload&&payload.length)
     return(

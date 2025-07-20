@@ -6,7 +6,7 @@ import { UserContext } from '../context/UserContext';
 //  }
 const ProfileIcon = () => {
 const {user}=useContext(UserContext);
-console.log("User in ProfileIcon:", user);
+
 if(!user || !user.name){
   return(
     <div className='flex justify-center w-20 h-20 items-center rounded-full bg-gray-700 text-white font-bold'>

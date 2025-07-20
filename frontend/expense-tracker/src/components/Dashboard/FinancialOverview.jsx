@@ -8,7 +8,7 @@ const FinancialOverview = ({totalBalance,totalIncome,totalExpense}) => {
         {name:"Total Income",amount:totalIncome},
         {name:"Total Expense",amount:totalExpense},
     ]
-    console.log("balanceData", balanceData);
+    
   return (
     <div className='card' >
         <div className='flex items-center justify-between '> 

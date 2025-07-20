@@ -32,12 +32,12 @@ export const login=async(req,res)=>{
     const oneDay=1000*60*60*24;
     res.cookie('token',token,{
         httpOnly:true,
-        sameSite:  "lax",
-        secure:false,
+        sameSite:  "none",
+        secure:true,
         expires:new Date(Date.now()+oneDay),
       
     })
-    console.log("Set-Cookie Header:", res.getHeaders()["set-cookie"]); 
+    
 
     res.status(StatusCodes.OK).json({msg:' user loggedIn successfully'})
     }

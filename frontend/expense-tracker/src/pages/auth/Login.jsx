@@ -64,7 +64,7 @@ const Login = () => {
       const validateErrors=validateLoginForm(formData);
       setErrors(validateErrors);
       if(Object.keys(validateErrors).length === 0){
-          console.log("form submitted",formData);
+          console.log("form submitted");
       }
       await handleLogin();
      }

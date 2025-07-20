@@ -2,7 +2,7 @@
 import './App.css'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import React from 'react'
-import AppLayout from './layouts/AppLayout.jsx'
+import AppLayout from './Layouts/AppLayout.jsx'
 import SignUp from './pages/auth/SignUp.jsx'
 import Login from './pages/auth/Login.jsx'
 import Income from './pages/Dashboard/Income.jsx'

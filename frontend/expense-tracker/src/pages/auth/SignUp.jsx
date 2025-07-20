@@ -38,11 +38,12 @@ const SignUp = () => {
         const {name,email,password}=formData
         console.log("API URL:", import.meta.env.VITE_REACT_APP_SIGN_UP); 
        try {
-       const response = await axios.post(import.meta.env.VITE_REACT_APP_SIGN_UP, {
-       name,
+       const response = await axios.post(import.meta.env.VITE_REACT_APP_SIGN_UP, 
+       {name,
        email,
-       password,
-       });
+       password},
+        { withCredentials: true }
+       );
 
      console.log(response.data);
 

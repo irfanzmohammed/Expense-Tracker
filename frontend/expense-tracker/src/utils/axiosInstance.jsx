@@ -2,7 +2,7 @@ import axios from 'axios'
 import { navigateToLogin } from './navigateToLogin';
 const axiosInstance =axios.create(
     {
-        baseURL:"https://expensetracker-tau-jet.vercel.app/api/v1/",
+        baseURL:"https://expense-tracker-two-gamma-96.vercel.app/api/v1/",
         timeout:5000,
         headers:{
             "Content-Type":"application/json"

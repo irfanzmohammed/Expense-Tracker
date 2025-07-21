@@ -4,10 +4,7 @@ import { Navigate } from 'react-router-dom'
 import { UserContext } from '../context/UserContext';
 
 const ProtectedRoute = ({children}) => {
-  const { user, loading } = useUserAuth();
-
-  if (loading) return <div className="text-center mt-10">Loading...</div>;
-  
+  const { user} = useUserAuth();
   if (user===null) {
     return <Navigate to="/auth" replace />
   }

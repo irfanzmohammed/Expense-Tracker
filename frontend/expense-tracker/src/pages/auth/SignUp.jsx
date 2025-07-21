@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
 import { useContext } from 'react';
 import axios from 'axios';
-
+import axiosInstance from '../../utils/axiosInstance';
 const SignUp = () => {
   const navigate=useNavigate();
     const[showPassword,setShowPassword]=useState(false);
@@ -36,21 +36,24 @@ const SignUp = () => {
 
        const handleSignUp=async()=>{
         const {name,email,password}=formData
-        console.log("API URL:", import.meta.env.VITE_REACT_APP_SIGN_UP); 
+        
        try {
-       const response = await axios.post(import.meta.env.VITE_REACT_APP_SIGN_UP, 
+       await axios.post(import.meta.env.VITE_REACT_APP_SIGN_UP, 
        {name,
        email,
        password},
         { withCredentials: true }
        );
 
-     console.log(response.data);
+      const userResponse = await axiosInstance.get(import.meta.env.VITE_REACT_APP_GET_USER);
 
-     if (response.data) {
-      updateUser(response.data.user);
+     if (userResponse.data?.user) {
+      updateUser(userResponse.data.user);
       navigate("/dashboard");
      }
+     else {
+      console.error("User data not returned.");
+    }
     } 
     catch (error) {
     console.error("Error signing up:", error);

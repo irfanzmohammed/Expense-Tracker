@@ -27,11 +27,7 @@ const useUserAuth = () => {
       }
     };
 
-    if (!user) {
-      getUser();
-    } else {
-      setLoading(false); // user already exists
-    }
+    getUser();
 
     return () => {
       isMounted = false;

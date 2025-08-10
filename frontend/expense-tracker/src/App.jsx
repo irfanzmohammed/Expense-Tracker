@@ -35,23 +35,23 @@ const approuter =createBrowserRouter([
     {
       path:'/dashboard',
       element:(
-      <DashboardHome/>
+      <ProtectedRoute><DashboardHome/></ProtectedRoute>
       )
     },
     {
       path:'/income',
       element: (
-          
+          <ProtectedRoute>
             <Income />
-          
+          </ProtectedRoute>
         )
     },
     {
       path:'/expense',
      element: (
-          
+          <ProtectedRoute>
             <Expense />
-          
+          </ProtectedRoute>
         )
     },
   ],

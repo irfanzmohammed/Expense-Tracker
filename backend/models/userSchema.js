@@ -16,7 +16,8 @@ const userSchema=new mongoose.Schema({
       },
 
     createdBy:{
-        type:mongoose.Types.ObjectId
+        type:mongoose.Types.ObjectId,
+         default: null
     }
 })
 

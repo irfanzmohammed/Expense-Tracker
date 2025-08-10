@@ -15,7 +15,7 @@ export const register=async(req,res)=>{
   }
   catch (error) {
     console.error("Error in register:", error);
-    res.status(StatusCodes.BAD_REQUEST).json({ msg: "Something went wrong" });
+      res.status(500).json({ error: error.message, stack: error.stack });
   }
 }
 
